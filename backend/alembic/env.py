@@ -4,6 +4,11 @@ from pathlib import Path
 
 from sqlalchemy import engine_from_config, pool
 from alembic import context
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.getcwd()))
+
 
 # ------------------------------------------------------------------
 # Make sure "app" is importable

@@ -6,18 +6,15 @@ from app.bookings.routes import router as bookings_router
 from app.payments.routes import router as payments_router
 from app.users.routes import router as users_router
 
-# Create FastAPI app
 app = FastAPI(title="Spacer API")
 
-# Root route (FIXES 404)
 @app.get("/")
 def root():
     return {
-        "message": "Spacer Commune API is running ",
+        "message": "Spacer Commune API is running",
         "docs": "/docs"
     }
 
-# Include routers
 app.include_router(auth_router, prefix="/auth", tags=["Auth"])
 app.include_router(spaces_router, prefix="/spaces", tags=["Spaces"])
 app.include_router(bookings_router, prefix="/bookings", tags=["Bookings"])

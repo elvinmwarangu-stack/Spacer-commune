@@ -14,14 +14,12 @@ from app.auth.service import (
 
 router = APIRouter()
 
-
 def get_db():
     db = SessionLocal()
     try:
         yield db
     finally:
         db.close()
-
 
 @router.post("/register")
 def register(
